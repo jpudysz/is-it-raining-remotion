@@ -1,19 +1,24 @@
-import {Composition} from 'remotion'
-import { Test } from './components'
+import { Composition } from 'remotion'
+import { IsItRaining } from './components'
+import { VIDEO_CONFIG } from './config'
 
-export const RemotionVideo: React.FC = () => {
-	return (
-			<Composition
-				id="HelloWorld"
-				component={Test}
-				durationInFrames={150}
-				fps={30}
-				width={1920}
-				height={1080}
-				defaultProps={{
-					titleText: 'Welcome to Remotion',
-					titleColor: 'black',
-				}}
-			/>
-	)
+export const RemotionVideo: React.FunctionComponent = () => {
+    const {
+        FPS,
+        VIDEO_DURATION_IN_FRAMES,
+        VIDEO_HEIGHT,
+        VIDEO_WIDTH,
+        VIDEO_ID
+    } = VIDEO_CONFIG
+
+    return (
+        <Composition
+            fps={FPS}
+            id={VIDEO_ID}
+            width={VIDEO_WIDTH}
+            height={VIDEO_HEIGHT}
+            component={IsItRaining}
+            durationInFrames={VIDEO_DURATION_IN_FRAMES}
+        />
+    )
 }
