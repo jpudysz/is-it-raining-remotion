@@ -1,6 +1,7 @@
 import { Composition } from 'remotion'
 import { IsItRaining } from './components'
 import { VIDEO_CONFIG } from './config'
+import './reset.css'
 
 export const RemotionVideo: React.FunctionComponent = () => {
     const {

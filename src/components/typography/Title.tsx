@@ -12,4 +12,6 @@ export const Title = styled.h2<TitleProps>`
     font-size: ${COMPOSITION_CONFIG.TEXT.FONT_SIZE.LARGE};
     font-weight: bold;
     font-family: "Comic Sans MS", cursive, sans-serif;
+    line-height: 1.3;
+    display: inline;
 `
