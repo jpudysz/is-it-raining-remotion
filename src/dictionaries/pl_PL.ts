@@ -10,7 +10,8 @@ export const pl_PL = {
         raining: 'Pada deszcz!',
         snowing: 'Pada śnieg! ',
         thunderstorm: 'Pada i jest burza!',
-        sunny: 'Nie pada!'
+        sunny: 'Nie pada!',
+        cloudy: 'Pochmurno i nie pada!'
     },
     outro: {
         question: 'Chcesz wiedzieć jak zaprogramować swojego bota?',

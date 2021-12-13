@@ -1,10 +1,8 @@
 import React from 'react'
 import { VideoBackground, VideoTitleBox, Cloud } from '../components'
-import { useTranslations } from '../hooks'
 import { COMPOSITION_CONFIG } from '../config'
 
 export const Intro: React.FunctionComponent = () => {
-    const T = useTranslations()
     const { VIDEO } = COMPOSITION_CONFIG
 
     return (
