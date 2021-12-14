@@ -1,16 +1,26 @@
 import styled from 'styled-components'
-import { Img } from 'remotion'
+import { Img, useCurrentFrame, interpolate } from 'remotion'
 import { Typography } from '../components'
 import { Images } from '../assets'
 import { useTranslations } from '../hooks'
 
 export const TitleBox = () => {
     const T = useTranslations()
+    const frame = useCurrentFrame()
+    const opacity = interpolate(
+        frame,
+        [0, 40, 50],
+        [0, 0, 1]
+    )
 
     return (
         <Container>
             <TitleBoxImage src={Images.TitleBox} />
-            <QuestionRow>
+            <QuestionRow
+                style={{
+                    opacity
+                }}
+            >
                 <Typography.Title>
                     {T.intro.question1}
                 </Typography.Title>

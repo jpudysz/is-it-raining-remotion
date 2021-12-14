@@ -6,4 +6,6 @@ export const Note = styled.p`
     font-size: ${COMPOSITION_CONFIG.TEXT.FONT_SIZE.SMALL};
     font-weight: 300;
     font-family: "Comic Sans MS", cursive, sans-serif;
+    line-height: 1.3;
+    white-space: pre-line;
 `

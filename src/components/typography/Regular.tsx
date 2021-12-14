@@ -6,4 +6,6 @@ export const Regular = styled.p`
     font-size: ${COMPOSITION_CONFIG.TEXT.FONT_SIZE.MEDIUM};
     font-weight: bold;
     font-family: "Comic Sans MS", cursive, sans-serif;
+    line-height: 1.3;
+    white-space: pre-line;
 `

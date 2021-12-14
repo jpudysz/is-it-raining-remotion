@@ -15,7 +15,7 @@ export const VIDEO_CONFIG = {
 
 export const APP_CONFIG = {
     CITY: 'Rzeszów',
-    DISCORD_URL: 'todo',
+    DISCORD_URL: 'https://discord.gg/QnAePyBk3C',
     WEATHER_API_KEY: 'todo'
 }
 
