@@ -7,6 +7,9 @@ import Sunbeds from './sunbeds.png'
 import Codemask from './codemask.png'
 import Discord from './discord.png'
 import Rain from './rain.png'
+import Thunder from './thunder.png'
+import Snow from './snow.png'
+import Sun from './sun.png'
 
 export const Images = {
     Cloud,
@@ -17,5 +20,8 @@ export const Images = {
     Sunbeds,
     Codemask,
     Discord,
-    Rain
+    Rain,
+    Thunder,
+    Snow,
+    Sun
 }

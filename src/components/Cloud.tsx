@@ -20,7 +20,7 @@ export const Cloud: React.FunctionComponent<CloudProps> = ({
     const frame = useCurrentFrame()
     const animatedTranslateX = interpolate(
         frame,
-        [0, 120],
+        [0, 120 * scale],
         [translateX, translateX - 50],
     )
 
