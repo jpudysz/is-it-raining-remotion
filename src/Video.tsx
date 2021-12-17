@@ -1,4 +1,6 @@
+import React, { useState } from 'react'
 import { Composition } from 'remotion'
+import { WeatherState } from './common'
 import { IsItRaining } from './components'
 import { VIDEO_CONFIG } from './config'
 import './reset.css'
@@ -11,6 +13,8 @@ export const RemotionVideo: React.FunctionComponent = () => {
         VIDEO_WIDTH,
         VIDEO_ID
     } = VIDEO_CONFIG
+    const [temperature] = useState(20)
+    const [weatherState] = useState(WeatherState.Cloudy)
 
     return (
         <Composition
@@ -20,6 +24,10 @@ export const RemotionVideo: React.FunctionComponent = () => {
             height={VIDEO_HEIGHT}
             component={IsItRaining}
             durationInFrames={VIDEO_DURATION_IN_FRAMES}
+            defaultProps={{
+                temperature,
+                weatherState
+            }}
         />
     )
 }

@@ -9,6 +9,7 @@ export { RainCloud } from './RainCloud'
 export { SnowCloud } from './SnowCloud'
 export { SunBehindTheCloud } from './SunBehindTheCloud'
 export { Sun } from './Sun'
+export { Codemask } from './Codemask'
 export { Weather } from './Weather'
 export {
     Typography
