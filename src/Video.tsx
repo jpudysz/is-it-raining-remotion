@@ -1,8 +1,9 @@
-import React, { useState } from 'react'
-import { Composition } from 'remotion'
+import React, { useState, useEffect } from 'react'
+import { Composition, continueRender, delayRender } from 'remotion'
 import { WeatherState } from './common'
 import { IsItRaining } from './components'
-import { VIDEO_CONFIG } from './config'
+import { VIDEO_CONFIG, APP_CONFIG } from './config'
+import { fetchWeatherDataForCity } from './actions'
 import './reset.css'
 
 export const RemotionVideo: React.FunctionComponent = () => {
@@ -13,10 +14,25 @@ export const RemotionVideo: React.FunctionComponent = () => {
         VIDEO_WIDTH,
         VIDEO_ID
     } = VIDEO_CONFIG
-    const [temperature] = useState(20)
-    const [weatherState] = useState(WeatherState.Cloudy)
+    const { CITY } = APP_CONFIG
+    const [handle] = useState(() => delayRender())
+    const [isReadyToRender, setIsReadyToRender] = useState(false)
+    const [temperature, setTemperature] = useState<number>()
+    const [weatherState, setWeatherState] = useState<WeatherState>()
+    const fetchWeatherData = async () => {
+        const { temperature, weatherState } = await fetchWeatherDataForCity(CITY)
 
-    return (
+        setTemperature(temperature)
+        setWeatherState(weatherState)
+        setIsReadyToRender(true)
+        continueRender(handle)
+    }
+
+    useEffect(() => {
+        fetchWeatherData()
+    }, [])
+
+    return isReadyToRender ? (
         <Composition
             fps={FPS}
             id={VIDEO_ID}
@@ -25,9 +41,9 @@ export const RemotionVideo: React.FunctionComponent = () => {
             component={IsItRaining}
             durationInFrames={VIDEO_DURATION_IN_FRAMES}
             defaultProps={{
-                temperature,
-                weatherState
+                temperature: temperature as number,
+                weatherState: weatherState as WeatherState
             }}
         />
-    )
+    ) : null
 }
