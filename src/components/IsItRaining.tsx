@@ -1,7 +1,9 @@
 import React, { Fragment } from 'react'
-import { Sequence, useVideoConfig } from 'remotion'
+import { Sequence, useVideoConfig, Audio } from 'remotion'
 import { Intro, Result, Outro } from '../sequences'
 import { WeatherState } from '../common'
+
+import source from '../assets/music.mp3'
 
 type IsItRainingProps = {
     weatherState: WeatherState,
@@ -40,6 +42,7 @@ export const IsItRaining: React.FunctionComponent<IsItRainingProps> = ({
             >
                 <Outro />
             </Sequence>
+            <Audio src={source} />
         </Fragment>
     )
 }
