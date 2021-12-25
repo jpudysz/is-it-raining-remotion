@@ -1,6 +1,8 @@
 on:
   workflow_dispatch:
 name: Render video
+env:
+  OPEN_WEATHER_API_KEY: ${{ secrets.OPEN_WEATHER_API_KEY }}
 jobs:
   render:
     name: Render video
