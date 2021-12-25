@@ -6,12 +6,13 @@ export const fetchWeatherDataForCity = async (city: string) => {
         .concat(city)
         .concat(`&appid=${APP_CONFIG.WEATHER_API_KEY}`)
         .concat(`&units=metric`)
+    
+    console.log(url)
 
     const { weatherState, temperature } = await fetch(url)
         .then(response => response.json())
         .then(data => toWeatherModel(data))
         .catch(error => {
-            console.log(JSON.stringify(error))
             throw new Error(JSON.stringify(error))
         })
 
