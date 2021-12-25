@@ -6,7 +6,7 @@ jobs:
     name: Render video
     runs-on: ubuntu-latest
     env:
-      OPEN_WEATHER_API_KEY: ${{ secrets.OPEN_WEATHER_API_KEY }}
+      OPEN_WEATHER_API_KEY: ${{secrets.OPEN_WEATHER_API_KEY}}
     steps:
       - uses: actions/checkout@main
       - uses: actions/setup-node@main
