@@ -7,7 +7,7 @@ export const fetchWeatherDataForCity = async (city: string) => {
         .concat(`&appid=${APP_CONFIG.WEATHER_API_KEY}`)
         .concat(`&units=metric`)
     
-    console.log(url)
+    core.info(url)
 
     const { weatherState, temperature } = await fetch(url)
         .then(response => response.json())
