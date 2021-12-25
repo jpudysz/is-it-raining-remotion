@@ -11,7 +11,7 @@ export const fetchWeatherDataForCity = async (city: string) => {
         .then(response => response.json())
         .then(data => toWeatherModel(data))
         .catch(error => {
-            throw new Error(JSON.stringify(url))
+            throw new Error(url)
         })
 
     return {
