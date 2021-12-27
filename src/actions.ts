@@ -11,7 +11,7 @@ export const fetchWeatherDataForCity = async (city: string) => {
         .then(response => response.json())
         .then(data => toWeatherModel(data))
         .catch(error => {
-            throw new Error(process.env.OPEN_WEATHER_API_KEY)
+            throw new Error('Failed to fetch weather data')
         })
 
     return {
