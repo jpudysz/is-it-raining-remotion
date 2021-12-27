@@ -1,0 +1,22 @@
+on:
+  schedule:
+    - cron: "0 11 * * *"
+name: Render video from CRON
+jobs:
+  render:
+    name: Render video
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@main
+      - uses: actions/setup-node@main
+      - run: sudo apt update
+      - run: sudo apt install ffmpeg
+      - run: npm i
+      - run: node getMusicFromTiktok.js
+      - run: npm run build -- --props=$WORKFLOW_INPUT"
+        env:
+          WORKFLOW_INPUT: ${{ toJson(github.event.inputs) }}
+      - uses: actions/upload-artifact@v2
+        with:
+          name: video.mp4
+          path: out/video.mp4
