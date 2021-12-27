@@ -2,7 +2,7 @@ on:
   push:
     branches:
       - main
-name: Render video manually
+name: Render video after merge to main
 jobs:
   render:
     name: Render video
