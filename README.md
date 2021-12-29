@@ -4,7 +4,7 @@ Projekt pokazuje w jaki sposób automatycznie generować filmiki pogodowe, któr
 
 Technologie: ReactJS, TypeScript, NodeJS, Puppeteer oraz Remotion
 
-Sprawdź automatycznie wygenerowane filmiki w zakładce "Actions": https://github.com/jpudysz/isitraining/actions
+Sprawdź automatycznie wygenerowane filmiki w zakładce "Actions": https://github.com/jpudysz/is-it-raining-remotion/actions
 
 Playlista YouTube:
 https://www.youtube.com/watch?v=SP0_kEQE38k&list=PLe9Nvh2XoKC0bEwDleNFS1FZTqS7u13KK
